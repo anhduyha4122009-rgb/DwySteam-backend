@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from routers.admin_tools import router as admin_tools_router
+app.include_router(admin_tools_router)
 from routers import auth, key, hwid, tools, verify, admin
 
 app = FastAPI(
